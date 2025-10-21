@@ -1,0 +1,43 @@
+# English Language File
+
+prefix: "&8[&6Calendar&8]&r"
+
+calendar:
+  current-date: "%prefix% &7Current Date: &f%date%"
+  date-set: "%prefix% &aDate has been set to: &f%date%"
+  time-advanced: "%prefix% &aTime advanced by %days% day(s)"
+  synced: "%prefix% &aCalendar synced with Minecraft day count! Current date: &f%date%"
+  
+commands:
+  no-permission: "%prefix% &cYou don't have permission to use this command!"
+  reload-success: "%prefix% &aConfiguration reloaded successfully!"
+  invalid-usage: "%prefix% &cInvalid usage! Use: &f%usage%"
+  player-only: "%prefix% &cThis command can only be used by players!"
+  
+holidays:
+  created: "%prefix% &aHoliday '&f%name%&a' created for &f%date%&a!"
+  no-coin: "%prefix% &cYou need a Holiday Coin to create a holiday!"
+  already-exists: "%prefix% &cA holiday already exists on that date!"
+  announced: "%prefix% &6Today is &f%name%&6!"
+  
+birthdays:
+  set: "%prefix% &aYour birthday has been set to &f%date%&a!"
+  view: "%prefix% &7Your birthday is on: &f%date%"
+  celebration: "%prefix% &6&lHappy Birthday, %player%!"
+  locked: "%prefix% &cYour birthday is already set and cannot be changed! Contact an admin if you need to change it."
+  auto-set: "%prefix% &aYour birthday has been automatically set to &f%date%&a!"
+  admin-set: "%prefix% &aAn admin has set your birthday to &f%date%&a!"
+  
+admin:
+  coin-given: "%prefix% &aGave %amount% Holiday Coin(s) to %player%"
+  coin-received: "%prefix% &aYou received %amount% Holiday Coin(s)!"
+  event-created: "%prefix% &aEvent created successfully!"
+  event-removed: "%prefix% &aEvent removed successfully!"
+  birthday-set: "%prefix% &aSet %player%'s birthday to &f%date%&a!"
+  discord-test-sent: "%prefix% &aTest Discord webhook sent!"
+  discord-disabled: "%prefix% &cDiscord integration is not enabled!"
+  discord-not-configured: "%prefix% &cDiscord webhook URL is not configured!"
+
+discord:
+  month-change-title: "🌙 New Month Begins!"
+  month-change-description: "A new month has begun in the calendar!"

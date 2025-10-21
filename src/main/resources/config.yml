@@ -1,0 +1,227 @@
+# XandonePrimalCalendar Configuration
+
+calendar:
+  # Use real-world date/time (true) or server-time calendar (false)
+  real-time-sync: false
+  
+  # Server-time calendar runs on in-game days
+  server-time-calendar: true
+  
+  # How many ticks equal one in-game day (default: 24000 = 20 minutes)
+  ticks-per-day: 24000
+  
+  # Date format - Available placeholders: %day%, %month%, %year%, %era%
+  date-format: "Day %day% of %month%, Year %year%"
+  
+  # How many years make up one era (0 = disabled, eras don't change)
+  years-per-era: 100
+  
+  # Eras configuration - Each era has a name and abbreviation
+  # The era changes every X years (defined by years-per-era)
+  eras:
+    1:
+      name: "Age of Light"
+      abbreviation: "A.L."
+    2:
+      name: "Age of Gods"
+      abbreviation: "A.G."
+    3:
+      name: "Age of Fire"
+      abbreviation: "A.F."
+    4:
+      name: "Age of Magic"
+      abbreviation: "A.M."
+    5:
+      name: "Age of Kings"
+      abbreviation: "A.K."
+    6:
+      name: "Age of War"
+      abbreviation: "A.W."
+    7:
+      name: "Age of Forge"
+      abbreviation: "A.Fo."
+    8:
+      name: "Age of Nature"
+      abbreviation: "A.N."
+    9:
+      name: "Age of Peace"
+      abbreviation: "A.P."
+    10:
+      name: "Golden Age"
+      abbreviation: "G.A."
+    11:
+      name: "Crystal Age"
+      abbreviation: "C.A."
+    12:
+      name: "Age of Dragons"
+      abbreviation: "A.D."
+    13:
+      name: "Age of Storms"
+      abbreviation: "A.S."
+    14:
+      name: "Ice Age"
+      abbreviation: "I.A."
+    15:
+      name: "Spirit Age"
+      abbreviation: "S.A."
+    16:
+      name: "Shadow Age"
+      abbreviation: "Sh.A."
+    17:
+      name: "Age of Rift"
+      abbreviation: "A.R."
+    18:
+      name: "Blood Age"
+      abbreviation: "B.A."
+    19:
+      name: "Dark Age"
+      abbreviation: "D.A."
+    20:
+      name: "Silent Age"
+      abbreviation: "Si.A."
+    21:
+      name: "Dust Age"
+      abbreviation: "Du.A."
+    22:
+      name: "Empty Age"
+      abbreviation: "E.A."
+    23:
+      name: "Forgotten Age"
+      abbreviation: "F.A."
+    24:
+      name: "Broken Age"
+      abbreviation: "Br.A."
+    25:
+      name: "Age of Chains"
+      abbreviation: "A.C."
+    26:
+      name: "Fallen Age"
+      abbreviation: "Fa.A."
+    27:
+      name: "Sea Age"
+      abbreviation: "Se.A."
+    28:
+      name: "Glass Age"
+      abbreviation: "Gs.A."
+    29:
+      name: "New Dawn"
+      abbreviation: "N.D."
+    30:
+      name: "Renewal Age"
+      abbreviation: "Rn.A."
+    31:
+      name: "Phoenix Age"
+      abbreviation: "Ph.A."
+    32:
+      name: "Age of Ascend"
+      abbreviation: "A.As."
+    33:
+      name: "Age of Discovery"
+      abbreviation: "A.Ds."
+    34:
+      name: "Rune Age"
+      abbreviation: "Ru.A."
+    35:
+      name: "Light Age"
+      abbreviation: "L.A."
+    36:
+      name: "Star Age"
+      abbreviation: "St.A."
+    37:
+      name: "Tempest Age"
+      abbreviation: "T.A."
+    38:
+      name: "Eclipse Age"
+      abbreviation: "E.Ag."
+    39:
+      name: "Shadow Age II"
+      abbreviation: "Sh.II"
+    40:
+      name: "Iron Age"
+      abbreviation: "I.Ag."
+    41:
+      name: "Awakened Age"
+      abbreviation: "Aw.A."
+    42:
+      name: "Crown Age"
+      abbreviation: "Cr.A."
+    43:
+      name: "Crystal Age II"
+      abbreviation: "C.II"
+    44:
+      name: "Moon Age"
+      abbreviation: "M.A."
+    45:
+      name: "Starfall Age"
+      abbreviation: "Sf.A."
+    46:
+      name: "Rebirth Age"
+      abbreviation: "Rb.A."
+    47:
+      name: "Crownless Age"
+      abbreviation: "Cl.A."
+    48:
+      name: "Shadow Age III"
+      abbreviation: "Sh.III"
+    49:
+      name: "Night Age"
+      abbreviation: "N.A."
+    50:
+      name: "New Light Age"
+      abbreviation: "NL.A."
+  
+  # Days per month (can be overridden per month below)
+  days-per-month: 30
+  
+  # Month names in order
+  months:
+    - "Frostmoon"
+    - "Thawmoon"
+    - "Bloomoon"
+    - "Sunmoon"
+    - "Firemoon"
+    - "Harvestmoon"
+    - "Fallmoon"
+    - "Darkmoon"
+  
+  # Custom days per month (optional - overrides days-per-month for specific months)
+  custom-month-lengths:
+    Frostmoon: 31
+    Thawmoon: 28
+    Bloomoon: 31
+    Sunmoon: 30
+    Firemoon: 31
+    Harvestmoon: 30
+    Fallmoon: 31
+    Darkmoon: 30
+
+# Discord Integration
+discord:
+  enabled: false
+  webhook-url: "YOUR_WEBHOOK_URL_HERE"
+  announce-holidays: true
+  announce-events: true
+  announce-birthdays: true
+  announce-month-change: true
+
+# Birthday System
+birthdays:
+  enabled: true
+  # Automatically set birthday on first join (prevents players from changing it)
+  auto-set-on-join: true
+  # Commands to run when it's a player's birthday (%player% placeholder)
+  rewards:
+    - "give %player% diamond 5"
+    - "broadcast &6Happy Birthday to %player%!"
+
+# Language
+language: "en_US"
+
+# Holiday Coin Item
+holiday-coin:
+  material: "SUNFLOWER"
+  name: "&6Holiday Coin"
+  lore:
+    - "&7Use this coin to create"
+    - "&7a personal holiday!"
+    - "&eRight-click or use /holiday"

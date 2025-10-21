@@ -1,0 +1,12 @@
+# Events Configuration
+# Similar to holidays but can be one-time or recurring
+
+events:
+  example-event:
+    day: 10
+    month: "Sunmoon"
+    year: 3  # Optional - if specified, only happens in that year
+    recurring: false
+    commands:
+      - "broadcast &cA special event is happening!"
+    message: "&cSpecial Event Day!"

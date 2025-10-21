@@ -1,0 +1,28 @@
+# Holidays Configuration
+# Format:
+# holiday-name:
+#   day: 1-31
+#   month: "MonthName"
+#   recurring: true/false
+#   commands:
+#     - "command to execute"
+#   message: "Message to broadcast"
+
+holidays:
+  new-year:
+    day: 1
+    month: "Frostmoon"
+    recurring: true
+    commands:
+      - "broadcast &6&lHappy New Year!"
+      - "give @a firework 5"
+    message: "&6Today is New Year's Day!"
+    
+  harvest-festival:
+    day: 15
+    month: "Harvestmoon"
+    recurring: true
+    commands:
+      - "broadcast &eHarvest Festival has begun!"
+      - "give @a bread 10"
+    message: "&eToday is the Harvest Festival!"

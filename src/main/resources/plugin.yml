@@ -1,0 +1,43 @@
+name: XandonePrimalCalendar
+version: '${project.version}'
+main: com.xandone.primalcalendar.XandonePrimalCalendar
+api-version: '1.21'
+authors: [ Xandone ]
+description: Custom calendar system for Minecraft servers
+softdepend: [ PlaceholderAPI, Vault ]
+
+commands:
+  calendar:
+    description: View the current calendar date
+    usage: /<command>
+    aliases: [ cal, date ]
+  caladmin:
+    description: Admin commands for calendar management
+    usage: /<command> <subcommand>
+    permission: primalcalendar.admin
+    aliases: [ caladm ]
+  holiday:
+    description: Create a personal holiday using a holiday coin
+    usage: /<command> <name> <day> <month>
+    permission: primalcalendar.holiday.create
+  birthday:
+    description: Set or view your birthday
+    usage: /<command> [set <day> <month>]
+    permission: primalcalendar.birthday
+
+permissions:
+  primalcalendar.admin:
+    description: Access to all admin commands
+    default: op
+  primalcalendar.calendar.view:
+    description: View the calendar
+    default: true
+  primalcalendar.holiday.create:
+    description: Create personal holidays with coins
+    default: true
+  primalcalendar.birthday:
+    description: Set and view birthdays
+    default: true
+  primalcalendar.reload:
+    description: Reload the plugin configuration
+    default: op
