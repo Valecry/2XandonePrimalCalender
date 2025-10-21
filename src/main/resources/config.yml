@@ -203,6 +203,9 @@ discord:
   announce-events: true
   announce-birthdays: true
   announce-month-change: true
+  announce-day-change: true
+  announce-year-change: true
+  announce-era-change: true
 
 # Birthday System
 birthdays:

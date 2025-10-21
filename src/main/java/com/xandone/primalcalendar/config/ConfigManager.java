@@ -144,6 +144,18 @@ public class ConfigManager {
         return config.getBoolean("discord.announce-month-change", true);
     }
 
+    public boolean shouldAnnounceDayChange() {
+        return config.getBoolean("discord.announce-day-change", true);
+    }
+
+    public boolean shouldAnnounceYearChange() {
+        return config.getBoolean("discord.announce-year-change", true);
+    }
+
+    public boolean shouldAnnounceEraChange() {
+        return config.getBoolean("discord.announce-era-change", true);
+    }
+
     public boolean shouldAnnounceBirthdays() {
         return config.getBoolean("discord.announce-birthdays", true);
     }

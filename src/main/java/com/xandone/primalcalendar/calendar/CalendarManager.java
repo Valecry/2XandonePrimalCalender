@@ -111,6 +111,12 @@ public class CalendarManager {
         for (int i = 0; i < days; i++) {
             currentDate.setDay(currentDate.getDay() + 1);
             
+            // Send day change announcement
+            if (plugin.getConfigManager().isDiscordEnabled() && 
+                plugin.getConfigManager().shouldAnnounceDayChange()) {
+                plugin.getDiscordWebhook().sendDayChangeAnnouncement(currentDate);
+            }
+            
             // Check if we need to advance to next month
             if (currentDate.getDay() > currentDate.getMonth().getDays()) {
                 currentDate.setDay(1);
@@ -124,8 +130,22 @@ public class CalendarManager {
                 
                 // Check if we've wrapped around to a new year
                 if (nextMonthIndex == 0) {
+                    String oldEra = currentDate.getEra();
                     currentDate.setYear(currentDate.getYear() + 1);
                     updateEraIfNeeded();
+                    
+                    // Send year change announcement
+                    if (plugin.getConfigManager().isDiscordEnabled() && 
+                        plugin.getConfigManager().shouldAnnounceYearChange()) {
+                        plugin.getDiscordWebhook().sendYearChangeAnnouncement(currentDate);
+                    }
+                    
+                    // Send era change announcement if era changed
+                    if (plugin.getConfigManager().isDiscordEnabled() && 
+                        plugin.getConfigManager().shouldAnnounceEraChange() &&
+                        !oldEra.equals(currentDate.getEra())) {
+                        plugin.getDiscordWebhook().sendEraChangeAnnouncement(currentDate, oldEra, currentDate.getEra());
+                    }
                 }
             }
             

@@ -99,6 +99,93 @@ public class DiscordWebhook {
         sendEmbed(title, description, color);
     }
 
+    public void sendDayChangeAnnouncement(CalendarDate date) {
+        if (!plugin.getConfigManager().isDiscordEnabled()) {
+            return;
+        }
+
+        if (!plugin.getConfigManager().shouldAnnounceDayChange()) {
+            return;
+        }
+
+        String formattedDate = plugin.getCalendarManager().formatDate(date);
+        String title = "\ud83c\udf05 New Day Begins!";
+        String description = String.format(
+                "A new day has begun in the calendar!\n\n" +
+                "\ud83d\udcc5 **Current Date:** %s\n" +
+                "\ud83d\uddd3\ufe0f **Month:** %s\n" +
+                "\ud83d\udcc6 **Day:** %d\n" +
+                "\ud83d\udcdc **Year:** %s",
+                formattedDate,
+                date.getMonth().getName(),
+                date.getDay(),
+                date.getFormattedYear()
+        );
+        int color = 15158332; // Orange color
+
+        sendEmbed(title, description, color);
+    }
+
+    public void sendYearChangeAnnouncement(CalendarDate date) {
+        if (!plugin.getConfigManager().isDiscordEnabled()) {
+            return;
+        }
+
+        if (!plugin.getConfigManager().shouldAnnounceYearChange()) {
+            return;
+        }
+
+        String formattedDate = plugin.getCalendarManager().formatDate(date);
+        String title = "\ud83c\udf8a New Year Begins!";
+        String description = String.format(
+                "A new year has begun in the calendar!\n\n" +
+                "\ud83d\udcc5 **Current Date:** %s\n" +
+                "\ud83d\uddd3\ufe0f **Month:** %s\n" +
+                "\ud83d\udcc6 **Day:** %d\n" +
+                "\ud83d\udcdc **Year:** %s\n\n" +
+                "\ud83c\udf89 May this year bring prosperity and adventure!",
+                formattedDate,
+                date.getMonth().getName(),
+                date.getDay(),
+                date.getFormattedYear()
+        );
+        int color = 10181038; // Teal color
+
+        sendEmbed(title, description, color);
+    }
+
+    public void sendEraChangeAnnouncement(CalendarDate date, String oldEra, String newEra) {
+        if (!plugin.getConfigManager().isDiscordEnabled()) {
+            return;
+        }
+
+        if (!plugin.getConfigManager().shouldAnnounceEraChange()) {
+            return;
+        }
+
+        String formattedDate = plugin.getCalendarManager().formatDate(date);
+        String title = "\u26a1 Era Transformed!";
+        String description = String.format(
+                "The great cycle has turned and a new era begins!\n\n" +
+                "\ud83d\udcc5 **Current Date:** %s\n" +
+                "\ud83d\uddd3\ufe0f **Month:** %s\n" +
+                "\ud83d\udcc6 **Day:** %d\n" +
+                "\ud83d\udcdc **Year:** %s\n\n" +
+                "\u23f0 **Previous Era:** %s\n" +
+                "\u2728 **New Era:** %s\n\n" +
+                "\ud83c\udf1f Let the tales of this new age be written!",
+                formattedDate,
+                date.getMonth().getName(),
+                date.getDay(),
+                date.getFormattedYear(),
+                oldEra,
+                newEra
+        );
+        int color = 10117668; // Purple color
+
+        sendEmbed(title, description, color);
+    }
+
     private void sendEmbed(String title, String description, int color) {
         Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
             try {
